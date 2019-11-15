@@ -1,0 +1,95 @@
+
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Sippin On Sunshine";
+    src: url('../fonts/Sippin\ On\ Sunshine\ -\ TTF.ttf') format("truetype");
+}
+html {
+    background-image: url("../images/download.jpg");    
+}
+@import "compass/css3";
+
+/* @import url(https://fonts.googleapis.com/css?family=Finger+Paint); */
+
+body {
+  /* background: black; */
+  overflow: hidden;
+  font: 3rem "Sippin On Sunshine";
+  text-align: center;
+  color: transparent;
+  backface-visibility: hidden;
+  line-height: 6rem;
+}
+
+#title {
+    margin: 4rem;
+    font-size: 5rem;
+    color: sandybrown;
+}
+
+.game {
+    color: springgreen;
+    text-decoration: none;
+    /* transform: scale(0.8); */
+    transition: all .2s ease-in-out;
+}
+.game:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
+}
+.choosed-game {
+  animation: smoky 3s 2s both;
+
+}
+.remain-game {
+  animation: smoky 3s 2s both;
+}
+
+span {
+  display: inline-block;
+  text-shadow: 0 0 0 springgreen;
+  /* animation: smoky 2s 1s both; */
+  /* animation: none; */
+}
+
+span:nth-child(even){
+  animation-name: smoky-mirror;
+}
+
+@keyframes smoky {
+  60% {
+    text-shadow: 0 0 40px whitesmoke;
+  }
+  to {
+    transform:
+      translate3d(15rem,-8rem,0)
+      rotate(-40deg)
+      skewX(70deg)
+      scale(1.5);
+    text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@keyframes smoky-mirror {
+  60% {
+    text-shadow: 0 0 40px whitesmoke; }
+  to {
+    transform:
+      translate3d(18rem,-8rem,0)
+      rotate(-40deg) 
+      skewX(-70deg)
+      scale(2);
+     text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@for $item from 1 through 21 {
+  span:nth-of-type(#{$item}){ 
+    animation-delay: #{(3 + ($item/10))}s; 
+  }
+} 
