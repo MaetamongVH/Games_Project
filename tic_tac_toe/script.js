@@ -67,7 +67,6 @@ function gameOver(gameWon) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
 	count = 0;
-
 	declareWinner(gameWon.player == huPlayer1 ? "huPlayer1 win!" : "huPlayer2 win");
 }
 
@@ -75,7 +74,6 @@ function declareWinner(who) {
 	document.querySelector(".endgame").style.display = "block";
 	document.querySelector(".endgame .text").innerText = who;
 }
-
 function emptySquares() {
 	return origBoard.filter(s => typeof s == 'number');
 }

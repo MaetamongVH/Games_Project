@@ -7,7 +7,10 @@
     src: url('../fonts/Sippin\ On\ Sunshine\ -\ TTF.ttf') format("truetype");
 }
 html {
-    background-image: url("../images/download.jpg");    
+    background-image: url("../images/backgroud-chup-anh-thoi-trang.png"); 
+    background-repeat: repeat scroll center top transparent;
+    background-size: 100%;
+    background-position:50% 50%;   
 }
 @import "compass/css3";
 
@@ -22,7 +25,16 @@ body {
   backface-visibility: hidden;
   line-height: 6rem;
 }
-
+.main {
+  position: fixed;
+  margin: 5vh auto 5vh -20vw;
+  height: 90vh;
+  width: 40vw;
+  border: 2px solid rgba(40, 199, 178, 0.726);
+  border-radius: 3rem;
+  background-color: rgba(28, 44, 58, 0.4);
+  left: 50%;
+}
 #title {
     margin: 4rem;
     font-size: 5rem;
@@ -40,21 +52,21 @@ body {
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5);
 }
-.choosed-game {
+/* .choosed-game {
   animation: smoky 3s 2s both;
 
 }
 .remain-game {
   animation: smoky 3s 2s both;
 }
-
+/* 
 span {
   display: inline-block;
   text-shadow: 0 0 0 springgreen;
   /* animation: smoky 2s 1s both; */
   /* animation: none; */
-}
-
+/* } */
+/* 
 span:nth-child(even){
   animation-name: smoky-mirror;
 }
@@ -92,4 +104,4 @@ span:nth-child(even){
   span:nth-of-type(#{$item}){ 
     animation-delay: #{(3 + ($item/10))}s; 
   }
-} 
+}  */
