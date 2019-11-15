@@ -1,26 +1,45 @@
+html {
+	background-image: url(./cbc22ca5a3d7568a742262639a9f6b3f.jpg);
+	font-family:  "Sarsapar";
+	
+}
+@font-face {
+    font-family: "Donut";
+    src: url('./PWYummyDonuts.ttf') format("truetype");
+}
+.cell {
+	color : darkgray;
+}
+#title {
+	font-size: 50px;
+	color: chartreuse;
+}
 td{
-    border:  2px solid #333;
+    border:  2px solid rgb(72, 235, 199);
 	height:  100px;
 	width:  100px;
 	text-align:  center;
 	vertical-align:  middle;
-	font-family:  "Comic Sans MS", cursive, sans-serif;
+	font-family:  "Donut";
 	font-size:  70px;
 	cursor: pointer;
 }
 table {
+	/* position: fixed; */
 	border-collapse: collapse;
 	position: absolute;
 	left: 50%;
 	margin-left: -155px;
-	top: 50px;
+	top: 100px;
 }
-table {
-	border-collapse: collapse;
-	position: absolute;
+
+
+#result-game {
+	position: fixed;
+	top: 50%;
 	left: 50%;
 	margin-left: -155px;
-	top: 50px;
+	z-index: 1;
 }
 
 table tr:first-child td {

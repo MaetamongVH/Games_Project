@@ -11,12 +11,15 @@ const winCombos = [
 	[0, 4, 8],
 	[6, 4, 2]
 ]
-
+const table = document.getElementById("table");
 const cells = document.querySelectorAll('.cell');
+const result = document.getElementById("result-game");
 startGame();
 let count = 0;
 function startGame() {
 	document.querySelector(".endgame").style.display = "none";
+	table.style.filter = "blur(0px)";
+	result.innerHTML = "";
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
@@ -59,9 +62,15 @@ function checkWin(board, player) {
 }
 
 function gameOver(gameWon) {
+	table.style.filter = "blur(3px)";
+	if(gameWon.player == huPlayer1) result.innerHTML = `<div>Player 1 Won</div>
+	<button onClick="startGame()">Replay</button>`;
+	else if(gameWon.player == huPlayer2) result.innerHTML = `<div>Player 2 Won</div>
+	<button onClick="startGame()">Replay</button>`;
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
 			gameWon.player == huPlayer1 ? "#16516d" : "#ffbc58";
+		
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
@@ -83,6 +92,9 @@ function emptySquares() {
 function checkTie() {
 	count++;
 	if (count == 9) {
+		result.innerHTML = `<div>Tie game</div>
+		<button onClick="startGame()">Replay</button>`
+		table.style.filter = "blur(3px)";
 		declareWinner("Tie!!!");
 		cells.forEach(e => {
 			e.setAttribute("style", "background-color : green");
