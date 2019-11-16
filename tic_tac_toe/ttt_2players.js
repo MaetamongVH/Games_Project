@@ -1,6 +1,7 @@
+
 var origBoard;
-const huPlayer1 = 'O';
-const huPlayer2 = 'X';
+const huPlayer1 = 'o';
+const huPlayer2 = 'x';
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -23,7 +24,9 @@ function startGame() {
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
-		cells[i].style.removeProperty('background-color');
+		cells[i].classList.remove("won-1");
+		cells[i].classList.remove("won-2");
+		cells[i].classList.remove("tie");
 		cells[i].addEventListener('click', turnClick, false);
 	}
 }
@@ -68,8 +71,13 @@ function gameOver(gameWon) {
 	else if(gameWon.player == huPlayer2) result.innerHTML = `<div>Player 2 Won</div>
 	<button onClick="startGame()">Replay</button>`;
 	for (let index of winCombos[gameWon.index]) {
-		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer1 ? "#16516d" : "#ffbc58";
+		if(gameWon.player === huPlayer1) {
+			document.getElementById(index).classList.add("won-1")	
+		}
+		else if(gameWon.player === huPlayer2) {
+			document.getElementById(index).classList.add("won-2")	
+
+		}
 		
 	}
 	for (var i = 0; i < cells.length; i++) {
@@ -95,7 +103,7 @@ function checkTie() {
 		table.style.filter = "blur(3px)";
 		declareWinner("Tie!!!");
 		cells.forEach(e => {
-			e.setAttribute("style", "background-color : green");
+			e.classList.add("tie");
 		})
 		count = 0;
 
