@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 var origBoard;
 const huPlayer1 = 'o';
 const huPlayer2 = 'x';
@@ -30,6 +30,7 @@ function startGame() {
 		cells[i].addEventListener('click', turnClick, false);
 	}
 }
+
 let changeTurn = true;
 function turnClick(square) {
 
@@ -72,6 +73,7 @@ function gameOver(gameWon) {
 	<button onClick="startGame()">Replay</button>`;
 	for (let index of winCombos[gameWon.index]) {
 		if(gameWon.player === huPlayer1) {
+			console.log("test");	
 			document.getElementById(index).classList.add("won-1")	
 		}
 		else if(gameWon.player === huPlayer2) {
@@ -100,7 +102,8 @@ function checkTie() {
 	if (count == 9) {
 		result.innerHTML = `<div>Tie game</div>
 		<button onClick="startGame()">Replay</button>`
-		table.style.filter = "blur(3px)";
+	table.style.filter = "blur(3px)";
+		result.setAttribute("style", "background-color: #64344c65");
 		declareWinner("Tie!!!");
 		cells.forEach(e => {
 			e.classList.add("tie");
