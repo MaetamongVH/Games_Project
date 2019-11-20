@@ -27,14 +27,14 @@ html {
 	left: calc(50% - 150px);
 
 	box-shadow:
-	  inset 0 0 25px #fff,
-	  inset 10px 0 40px rgba(20, 20, 20, 0.2),
-	  inset -10px 0 40px rgba(40, 40, 40, 0.2),
-	  inset 10px 0 150px rgba(20, 20, 20, 0.2),
-	  inset -10px 0 150px rgba(40, 40, 40, 0.2),
-	  0 0 25px #fff,
-	  -5px 0 40px rgba(20, 20, 20, 0.2),
-	  5px 0 40px rgba(40, 40, 40, 0.2); 
+	  inset 0 0 2.5vw #fff,
+	  inset 1vw 0 4vw rgba(20, 20, 20, 0.2),
+	  inset -1vw 0 4vw rgba(40, 40, 40, 0.2),
+	  inset 1vw 0 10vw rgba(20, 20, 20, 0.2),
+	  inset -1vw 0 10vw rgba(40, 40, 40, 0.2),
+	  0 0 2.5vw #fff,
+	  -0.5vw 0 4vw rgba(20, 20, 20, 0.2),
+	  .5vw 0 4vw rgba(40, 40, 40, 0.2); 
 }
 
 .menu {

@@ -83,12 +83,24 @@ for (let i = 0; i < nodes.length; i++) {
 }
 const redo = function()
 {
-    const lastBot = check.pop();
-    const lastHuman = check.pop();
-    nodes[lastBot.y].children[lastBot.x].innerHTML = '';
-    nodes[lastHuman.y].children[lastHuman.x].innerHTML = '';
-    virtualBoard[lastBot.y][lastBot.x] = -1;
-    virtualBoard[lastHuman.y][lastHuman.x] = -1;
+    if(check.length > 0)
+    {
+        const lastBot = check.pop();
+        const lastHuman = check.pop();
+        nodes[lastBot.y].children[lastBot.x].innerHTML = '';
+        nodes[lastHuman.y].children[lastHuman.x].innerHTML = '';
+        virtualBoard[lastBot.y][lastBot.x] = -1;
+        virtualBoard[lastHuman.y][lastHuman.x] = -1;
+        result.innerHTML = "";
+        board.setAttribute("style", "filter:blur(0px)");
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = 0; j < nodes[i].childElementCount; j++) {
+                const element = nodes[i].children[j];
+                element.classList.remove("won-1");
+                element.classList.remove("won-2");
+            }
+        }
+    }
 }
 const restart = function () {
     result.innerHTML = "";
