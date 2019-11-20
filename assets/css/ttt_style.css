@@ -33,7 +33,7 @@ html {
 }
 
 .menu {
-	position: relative;
+	position: absolute;
 	left: 50%;
 	top: 25vh;
 	margin-left: -12.5vw;

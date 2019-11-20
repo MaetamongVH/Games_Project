@@ -48,5 +48,5 @@ function load2PlayersCaro()
     }, 1500);
 }
 setInterval(()=>{
-    // document.getElementById("background-sound").play();
+    document.getElementById("background-sound").play();
 }, -1000);
