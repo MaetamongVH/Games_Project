@@ -1,45 +1,56 @@
-
 * {
     box-sizing: border-box;
 }
 @font-face {
-    font-family: "Sippin On Sunshine";
-    src: url('../fonts/Sippin\ On\ Sunshine\ -\ TTF.ttf') format("truetype");
+  font-family: "Cleon";
+  src: url('/assets/fonts/Cleon-Demo.otf') format("truetype");
 }
 html {
-    background-image: url("../images/rainbow-glow-stripe-overlap-in-dark-space-backgrou-vector-20291869.jpg"); 
-    background-repeat: repeat scroll center top transparent;
-    background-size: 100%;
-    background-position:50% 50%;   
+	background-image: url(/assets/images/galaxy-background-design_2001749.jpg);
+    background-size: 150%;
+	background-position:50% 50%;  
+	font-family: "Cleon";
 }
 @import "compass/css3";
 
-/* @import url(https://fonts.googleapis.com/css?family=Finger+Paint); */
-
 body {
-  /* background: black; */
   overflow: hidden;
-  font: 3rem "Sippin On Sunshine";
   text-align: center;
   color: transparent;
   backface-visibility: hidden;
   line-height: 6rem;
 }
 .main {
+	line-height: 10vh;
+  display: flex;
+  flex-direction: column;
   position: fixed;
   margin: 5vh auto 5vh -20vw;
+  padding: auto;
   height: 90vh;
   width: 40vw;
-  border: 2px solid rgba(40, 199, 178, 0.726);
+  border: 2px solid ;
   border-radius: 3rem;
-  background-color: rgba(28, 44, 58, 0.4);
   left: 50%;
 }
 #title {
-    margin: 4rem;
-    font-size: 5rem;
-    color: sandybrown;
+  margin: 2vh auto 10vh;
+    font-size: 10vh;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
+
+/* .choice {
+	width: fit-content;
+}
+.choice:hover {
+	transform: translateX(20px);
+	content: attr("ER");
+
+} */
 
 .game {
     color: springgreen;
@@ -47,61 +58,117 @@ body {
     /* transform: scale(0.8); */
     transition: all .2s ease-in-out;
 }
-.game:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
+/* .game:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5); 
     transform: scale(1.5);
-}
-/* .choosed-game {
-  animation: smoky 3s 2s both;
+} */
 
+.won-2 {
+	top: calc(50% - 150px);
+	left: calc(50% - 150px);
+	width: 25vh;
+	height: 25vh;
+	box-shadow:
+	  inset 0 0 25px #fff,
+	  inset 10px 0 40px #ff00ff,
+	  inset -10px 0 40px #0ff,
+	  inset 10px 0 150px #ff00ff,
+	  inset -10px 0 150px #0ff,
+	  0 0 25px #fff,
+	  -5px 0 40px #ff00ff,
+	  5px 0 40px #0ff;
 }
-.remain-game {
-  animation: smoky 3s 2s both;
-}
-/* 
-span {
-  display: inline-block;
-  text-shadow: 0 0 0 springgreen;
-  /* animation: smoky 2s 1s both; */
-  /* animation: none; */
-/* } */
-/* 
-span:nth-child(even){
-  animation-name: smoky-mirror;
-}
-
-@keyframes smoky {
-  60% {
-    text-shadow: 0 0 40px whitesmoke;
-  }
-  to {
-    transform:
-      translate3d(15rem,-8rem,0)
-      rotate(-40deg)
-      skewX(70deg)
-      scale(1.5);
-    text-shadow: 0 0 20px whitesmoke;
-    opacity: 0;
-  }
+.won-1{
+	top: calc(50% - 150px);
+	left: calc(50% - 150px);
+	width: 25vh;
+	height: 25vh;
+	box-shadow:
+	  inset 0 0 25px #fff,
+	  inset 10px 0 40px rgba(6, 206, 189, 0.3),
+	  inset -10px 0 40px #0ff,
+	  inset 10px 0 150px rgba(6, 206, 189, 0.3),
+	  inset -10px 0 150px #0ff,
+	  0 0 25px #fff,
+	  -5px 0 40px #06cebd4d,
+	  5px 0 40px #0ff; 
 }
 
-@keyframes smoky-mirror {
-  60% {
-    text-shadow: 0 0 40px whitesmoke; }
-  to {
-    transform:
-      translate3d(18rem,-8rem,0)
-      rotate(-40deg) 
-      skewX(-70deg)
-      scale(2);
-     text-shadow: 0 0 20px whitesmoke;
-    opacity: 0;
-  }
+.tie {
+	top: calc(50% - 150px);
+	left: calc(50% - 150px);
+	width: 25vh;
+	height: 25vh;
+	box-shadow:
+	  inset 0 0 25px #fff,
+	  inset 10px 0 40px greenyellow,
+	  inset -10px 0 40px cyan,
+	  inset 10px 0 150px greenyellow,
+	  inset -10px 0 150px cyan,
+	  0 0 25px #fff,
+	  -5px 0 40px greenyellow,
+	  5px 0 40px cyan;
 }
 
-@for $item from 1 through 21 {
-  span:nth-of-type(#{$item}){ 
-    animation-delay: #{(3 + ($item/10))}s; 
+button {
+	width: 25vw;
+	min-width: 15vw;
+  outline: none;
+	transition: 0.25s;
+	background: none;
+	border: 2px solid;
+	font: inherit;
+	line-height: 1;
+	margin: 0.5em;
+  font-size: 8vh;
+	padding: 2vh 4vh;	
+	color: #fff;
+	border: 1.5px solid #ffa260;
+	border-radius: 5px;
+	text-align: center;
+	-webkit-animation: glow-result 1s ease-in-out infinite alternate;
+	-moz-animation: glow-result 1s ease-in-out infinite alternate;
+	animation: glow-result 1s ease-in-out infinite alternate;
+}
+button:hover {
+	box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+	  transform: translateY(-0.25em);
+	/* -webkit-animation: glow-result 1s ease-in-out infinite alternate;
+	-moz-animation: glow-result 1s ease-in-out infinite alternate;
+	animation: glow-result 1s ease-in-out infinite alternate; */
+}
+button:focus {
+	animation: pulse 1.5s 1;
+	text-align: center;
+	color: white;
+	text-shadow:0 0 1px #fff, 0 0 2px #fff, 0 0 3px #dbd81a, 0 0 4px #dbd81a, 0 0 5px #dbd81a, 0 0 6px #dbd81a, 0 0 7px #dbd81a;
+}
+@keyframes pulse
+{
+     0% {
+          box-shadow: 0 0 0 0px #ffa2607c;
+     }
+     100% {
+          box-shadow: 0 0 0 35px  #ffa26000;
+     }
+}
+
+@-webkit-keyframes glow {
+	from {
+	  text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #e60073, 0 0 8px #e60073, 0 0 10px #e60073, 0 0 12px #e60073, 0 0 14px #e60073;
+	}
+	
+	to {
+	  text-shadow: 0 0 4px #fff, 0 0 6px #ff4da6, 0 0 8px #ff4da6, 0 0 10px #ff4da6, 0 0 12px #ff4da6, 0 0 14px #ff4da6, 0 0 16px #ff4da6;
+	}
   }
-}  */
+  @-webkit-keyframes glow-result {
+	from {
+	  text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #dbd81a, 0 0 4px #dbd81a, 0 0 5px #dbd81a, 0 0 6px #dbd81a, 0 0 7px #dbd81a;
+	}
+	
+	to {
+	  text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px yellow, 0 0 5px yellow, 0 0 6px yellow, 0 0 7px yellow, 0 0 8px yellow;
+	}
+  }
