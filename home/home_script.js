@@ -1,3 +1,4 @@
+// @ts-nocheck
 const btnSound = document.getElementById("js-btnSound");
 function loadAssetsTTT()
 {
