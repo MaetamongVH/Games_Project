@@ -13,12 +13,13 @@ html {
 	display: none;
 } */
 .cell {
-	width: 10vw;
-	height: 10vw;
-	font-size: 20vh;
+	width: 13.5vw;
+	height: 13.5vw;
+	font-size: 11vw;
 	font-weight: 1px;
 	color: #fff;
 	text-align: center;
+	text-justify: center;
 	-webkit-animation: glow 1s ease-in-out infinite alternate;
 	-moz-animation: glow 1s ease-in-out infinite alternate;
 	animation: glow 1s ease-in-out infinite alternate;
@@ -99,7 +100,7 @@ html {
 
 
 #title {
-	font-size: 6vw;
+	font-size: 4vw;
 	color: #fff;
 	text-align: center;
 	-webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -116,10 +117,9 @@ table {
 	border-collapse: collapse;
 	position: absolute;
 	left: 50%;
-	margin-left: -15vw;
-	top: 100px;
-    margin-top: 3vh;
-	margin-bottom: 5vh;
+	margin-left: -20.5vw;
+    margin-top: 1vw;
+	margin-bottom: 1vw;
 }
 
 #result-game {
