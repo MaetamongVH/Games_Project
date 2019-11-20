@@ -52,9 +52,10 @@ function turn(squareId, player) {
 	document.getElementById(squareId).innerText = player;
 	tick.play();
 	let gameWon = checkWin(origBoard, player)
-	if (gameWon) gameOver(gameWon)
+	if (gameWon) gameOver(gameWon);
+	else checkTie();
 	changeTurn = !changeTurn
-	checkTie();
+
 }
 
 function checkWin(board, player) {
@@ -76,13 +77,11 @@ function checkWin(board, player) {
 function gameOver(gameWon) {
 	table.style.filter = "blur(3px)";
 	if (gameWon.player == huPlayer1) {
-		count = 0;
 		result.innerHTML = `<div>Player 1 Won</div>
 	<button onClick="startGame()">Replay</button>`;
 	wonSound.play();
 	}
 	else if (gameWon.player == huPlayer2) {
-		count = 0;
 		result.innerHTML = `<div>Player 2 Won</div>
 	<button onClick="startGame()">Replay</button>`;
 	wonSound.play();
@@ -98,6 +97,8 @@ function gameOver(gameWon) {
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
+	count = 0;
+
 }
 
 function declareWinner(who) {
@@ -114,11 +115,11 @@ async function checkTie() {
 	if (count === 9) {
 			result.innerHTML = `<div>Tie game</div>
 		<button onClick="startGame()">Replay</button>`
+		tieSound.play();
 		table.style.filter = "blur(3px)";
 		cells.forEach(e => {
 			e.classList.add("tie");
 		})
 		count = 0;
-		tieSound.play();
 	}
 }

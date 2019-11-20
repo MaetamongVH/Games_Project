@@ -69,6 +69,10 @@ body {
 	animation: glow-result 1s ease-in-out infinite alternate;
 }
 .columns {
+	width: 3.5vw;
+	height: 3.5vw;
+	font-size: 2.5vw;
+	font-weight: 1px;
     border: 0.1px solid cadetblue;
 	cursor: pointer;
     color: #fff;
@@ -161,14 +165,14 @@ body {
     text-align: center;
 }
 
-@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
+/* @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
 	.columns {
 	width: 3.5vw;
 	height: 3.5vw;
 	font-size: 2.5vw;
 	font-weight: 1px;
     }
-}
+} */
 button {
 	width: 25vw;
 	min-width: 15vw;
@@ -178,7 +182,7 @@ button {
 	font: inherit;
 	line-height: 1;
 	margin: 0.5em;
-	font-size: 5vh;
+	font-size: 3vw;
 	padding: 2vh 4vh;	
 	color: #fff;
 	border: 1.5px solid #ffa260;

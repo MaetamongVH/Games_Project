@@ -13,6 +13,10 @@ html {
 	display: none;
 } */
 .cell {
+	width: 25vh;
+	height: 25vh;
+	font-size: 20vh;
+	font-weight: 1px;
 	color: #fff;
 	text-align: center;
 	-webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -41,8 +45,6 @@ html {
 .tie {
 	top: calc(50% - 150px);
 	left: calc(50% - 150px);
-	width: 25vh;
-	height: 25vh;
 	box-shadow:
 	  inset 0 0 25px #fff,
 	  inset 10px 0 40px #ff00ff,
@@ -56,8 +58,6 @@ html {
 .won-1{
 	top: calc(50% - 150px);
 	left: calc(50% - 150px);
-	width: 25vh;
-	height: 25vh;
 	box-shadow:
 	  inset 0 0 25px #fff,
 	  inset 10px 0 40px rgba(6, 206, 189, 0.3),
@@ -72,8 +72,6 @@ html {
 .won-2 {
 	top: calc(50% - 150px);
 	left: calc(50% - 150px);
-	width: 25vh;
-	height: 25vh;
 	box-shadow:
 	  inset 0 0 25px #fff,
 	  inset 10px 0 40px greenyellow,
@@ -101,7 +99,7 @@ html {
 
 
 #title {
-	font-size: 12vh;
+	font-size: 6vw;
 	color: #fff;
 	text-align: center;
 	-webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -131,7 +129,7 @@ table {
 	width: 50vw;
 	margin-left: -25vw;
 	z-index: 1;
-	font-size: 15vh;
+	font-size: 8vw;
 	color: #fff;
 	text-align: center;
 	-webkit-animation: glow-result 1s ease-in-out infinite alternate;
@@ -185,7 +183,7 @@ button {
 	font: inherit;
 	line-height: 1;
 	margin: 0.5em;
-	font-size: 5vh;
+	font-size: 3vw;
 	padding: 2vh 4vh;	
 	color: #fff;
 	border: 1.5px solid #ffa260;
@@ -204,14 +202,14 @@ button:focus {
 	color: white;
 	text-shadow:0 0 1px #fff, 0 0 2px #fff, 0 0 3px #dbd81a, 0 0 4px #dbd81a, 0 0 5px #dbd81a, 0 0 6px #dbd81a, 0 0 7px #dbd81a;
 }
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
+  /* @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
 	.cell {
 	width: 25vh;
 	height: 25vh;
 	font-size: 20vh;
 	font-weight: 1px;
 	}
-}
+} */
 
 @keyframes pulse
 {
