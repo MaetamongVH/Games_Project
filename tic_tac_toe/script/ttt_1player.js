@@ -50,7 +50,8 @@ function turn(squareId, player) {
 	tick.play();
 	let gameWon = checkWin(origBoard, player)
 	if (gameWon) gameOver(gameWon)
-	checkTie();
+	else checkTie();
+	
 }
 
 function checkWin(board, player) {
