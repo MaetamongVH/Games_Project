@@ -1,7 +1,3 @@
-# Games_Project
+# X and O 
 ...
-git add .
-git commit -m "chuthich"
-git push -u origin master
-
-git remote show origin  //xem duong dan
+### Link to play: https://xandogame.netlify.app/
